@@ -1,0 +1,23 @@
+<div class="col-3" *ngIf="authService.loggedIn()">
+    <div class="side-nav-content " *ngIf="authService.loggedIn()">
+        <ul class="nav-list " [ngClass]="{'nav-list-open':sideNavStatus} ">
+
+            <li class="nav-list-item "  [routerLinkActiveOptions]="{exact:true}" routerLink="/dashboard" routerLinkActive="active">
+                <i class="fa-solid fa-house"></i>
+                <a>Dashboard</a>
+            </li>
+            <li class="nav-list-item " routerLink="dashboard/project" routerLinkActive="active ">
+                <i class="fa-solid fa-chart-line"></i>
+                <a>Project</a>
+            </li>
+            <li class="nav-list-item " routerLink="dashboard/profile" routerLinkActive="active ">
+                <i class="fa-solid fa-user"></i>
+                <a>Profile</a>
+            </li>
+            <li class="nav-list-item " (click)="logout()">
+                <i class="fa-solid fa-sign-out"></i>
+                <a>Logout</a>
+            </li>
+        </ul>
+    </div>
+</div>

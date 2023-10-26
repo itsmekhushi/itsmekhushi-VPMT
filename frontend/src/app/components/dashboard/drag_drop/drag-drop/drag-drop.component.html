@@ -1,0 +1,109 @@
+<div class="container">
+  <!-- <p data-letters="MN"> My Name</p>or whatever structure you used
+  <p data-letters="AK">Amisha Kabra</p>or whatever structure you used -->
+
+
+
+    <h3 style="display: inline-block  ;"></h3>
+   
+  
+  <div class="container shadow p-3 mb-5 bg-white rounded" *ngIf="isLoaded">
+    <button class="btn"  (click)="openDialogs()" ><i class="fa-solid fa-plus  fa-xl" style="color: white;"  ></i>Create Ticket</button>
+    <h3 >Project/{{project_details.project_title}}</h3>
+
+    <div class="row g-3">
+      <div class="col-12 col-md-6 col-lg-3 d-flex align-items-stretch">
+        <div class="card" style="background-color:#f4f5f7;margin-top: 25px; margin-bottom: 25px;">
+          <div class="example-container">
+            <h2 style="text-align: center;">To do</h2> 
+            <div
+              cdkDropList
+              #todoList="cdkDropList"
+              [cdkDropListData]="todo"
+              [cdkDropListConnectedTo]="[inProgressList,readyForQAList,doneList]"
+              class="example-list"
+              (cdkDropListDropped)="drop($event)"
+              id="toDo"
+              >
+              <div class="example-box" *ngFor="let item of todo" cdkDrag (click)="openDialog($event)">{{item}}</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="col-12 col-md-6 col-lg-3 d-flex align-items-stretch">
+        <div class="card" style="background-color:#f4f5f7;margin-top: 25px; margin-bottom: 25px;">
+          <div class="example-container">
+            <h2 style="text-align: center;">In Progress</h2>
+            <div
+              cdkDropList
+              #inProgressList="cdkDropList"
+              [cdkDropListData]="inProgress"
+              [cdkDropListConnectedTo]="[todoList,readyForQAList,doneList]"
+              class="example-list"
+              (cdkDropListDropped)="drop($event)"
+              id="inProgress"
+              >
+              <div class="example-box " *ngFor="let item of inProgress" cdkDrag (click)="openDialog($event)">{{item}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-lg-3 d-flex align-items-stretch">
+        <div class="card" style="background-color:#f4f5f7;margin-top: 25px; margin-bottom: 25px;">
+          <div class="example-container">
+            <h2 style="text-align: center;">Ready For QA</h2>
+            <div
+              cdkDropList
+              #readyForQAList="cdkDropList"
+              [cdkDropListData]="readyForQA"
+              [cdkDropListConnectedTo]="[inProgressList,readyForQAList,doneList]"
+              class="example-list"
+              (cdkDropListDropped)="drop($event)"
+              id="readyForQA"
+              >
+              <div class="example-box" *ngFor="let item of readyForQA" cdkDrag (click)="openDialog($event)">{{item}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-lg-3 d-flex align-items-stretch">
+        <div class="card" style="background-color:#f4f5f7; margin-top: 25px; margin-bottom: 25px;">
+          <div class="example-container">
+            <h2 style="text-align: center; padding-top: 2px;padding-bottom: 2px;">Done</h2>
+            <div
+              cdkDropList
+              #doneList="cdkDropList"
+              [cdkDropListData]="done"
+              [cdkDropListConnectedTo]="[todoList,inProgressList,readyForQAList]"
+              class="example-list"
+              (cdkDropListDropped)="drop($event)"
+              id="done"
+              >
+              <div class="example-box" *ngFor="let item of done" cdkDrag (click)="openDialog($event)">{{item}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+<!-- <br>
+<br>
+<br>
+<br<div class="main">
+  <button mat-raised-button class="btn" (click)="openDialogs()" ><i class="fa-solid fa-plus  fa-xl" style="color: white;"></i>Create Ticket</button>
+
+</div>>
+
+<br> -->
+
+  
+ 
+  
+ 
+
+ 
+

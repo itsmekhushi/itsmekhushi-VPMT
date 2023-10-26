@@ -1,0 +1,96 @@
+
+<!-- ===============================Initial Input Box======================================= -->
+<form style="margin-left: 23px; margin-right: 23px;" [style.display]="status">
+  <div class="form-group ">
+    <input class="form-control" rows="3" placeholder="Add Your Comment...." style="padding: 10px;" (click)="commentStatusChange()">
+  </div>
+</form> 
+
+<!-- =========================================Reply Comment Box=================================== -->
+  <form style="margin-left: 23px; margin-right: 23px;" [style.display]="replyStatus">
+    <div class="form-group ">
+       <textarea 
+       class="form-control" 
+       rows="3" 
+       
+       placeholder="Enter Your Reply...." 
+       #replytext [value]="replyValue"></textarea> 
+       
+    </div>
+    <button type="reset" class="btn btn-primary" style="height: 34px;margin-top:10px; width: 150px;"
+      (click)="addReply(replytext.value)" >Reply</button>
+  </form>
+
+
+<!-- ============================================Comment Box============================================ -->
+<form style="margin-left: 23px; margin-right: 23px;" [style.display]="commentStatus">
+  <div class="form-group ">
+    <textarea class="form-control" rows="3" placeholder="Enter Your Comment...." #text></textarea>
+  </div>
+  <button type="reset" class="btn btn-primary" style="height: 34px;margin-top:10px; width: 150px;"
+    (click)="addComment(text.value)">Send</button>
+</form>
+
+<!-- =============================================Edit Comment Box========================================= -->
+<form style="margin-left: 23px; margin-right: 23px;" [style.display]="editCommentStatus">
+  <div class="form-group ">
+    <textarea class="form-control" rows="3" placeholder="Enter Your Comment...." #edittext [value]="editValue"></textarea>
+  </div>
+  <button type="reset" class="btn btn-primary" style="height: 34px;margin-top:10px; width: 150px;"  
+    (click)="updateComment(edittext.value)">Edit</button>
+</form>
+
+<!-- =================================================Comment Disply======================================= -->
+<div class="container" *ngFor="let comment of mainComment" style=" padding: 0px; margin-right:23px; margin-left: 23px;">
+  <div class="card pt-2" style="padding-right: 20px; width: 96%;" >
+    <div class="comment" #commentData>
+      <div class="c-controls">
+        <a class="delete" *ngIf="comment.user_id.user_name===user_name" (click)="deleteComment(comment)"><i class="fa-solid fa-trash"
+            style="color: #ed6368;"></i>Delete</a>
+        <a class="edit" *ngIf="comment.user_id.user_name===user_name" (click)="editStatusChange()" (click)="getTargetCommentData(comment)"><i class="fa-solid fa-pen"
+            style="color: #5457b6;"></i>Edit</a>
+        <a class="reply" (click)="changeStatus()" (click)="getTargetCommentData(comment)"><i class="fa-solid fa-share fa-flip-horizontal"
+            style="color: #5457b6;"></i>Reply</a>
+      </div>
+      <div class="c-user">
+        <img src="" alt="" class="usr-img">
+        <p class="usr-name" id="usr-name">{{comment.user_id.user_name}}</p>
+        <p class="cmnt-at " style="margin-left : 10px;">{{comment.createdAt}}</p>
+      </div>
+      <p class="c-text">
+       
+        <span class="c-body">{{comment.comment_body}}</span>
+      </p>
+    </div>
+  </div>
+  <!-- ===============================Reply Comment Display ===================================================== -->
+  <div class="repliles" *ngFor="let reply of reply" style="margin-right: 23px;">
+    <div class="card pt-2 " style="padding-right: 20px; margin-left: 23px; margin-top: 23px; width: 96%;"  *ngIf="reply.parent_id===comment._id">
+        <div class="comment">
+            
+            <div class="c-controls">
+                <a class="delete" *ngIf="comment.user_id.user_name===user_name"  (click)="deleteComment(reply)"><i class="fa-solid fa-trash"
+                    style="color: #ed6368;"></i>Delete</a>
+                    <a class="edit" *ngIf="comment.user_id.user_name===user_name" (click)="editStatusChange()" (click)="getTargetCommentData(reply)"><i class="fa-solid fa-pen"
+                        style="color: #5457b6;"></i>Edit</a>
+                        <a class="reply" (click)="changeStatus()" (click)="getTargetCommentData(comment)"><i class="fa-solid fa-share fa-flip-horizontal"
+                            style="color: #5457b6;"></i>Reply</a>
+                        </div>
+                        <div class="c-user">
+                            <img src="" alt="" class="usr-img">
+                            <p class="usr-name">{{reply.user_id.user_name}}</p>
+                            
+          <p class="cmnt-at " style="margin-left : 10px;">{{reply.createdAt}}</p>
+        </div>
+        <p class="c-text">
+          <span class="reply-to"></span>
+          <span class="c-body">{{reply.comment_body}}</span>
+        </p>
+      </div>
+     
+      
+    </div>
+  
+  </div>
+
+  </div> 

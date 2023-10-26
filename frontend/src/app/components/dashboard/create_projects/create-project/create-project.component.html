@@ -1,0 +1,103 @@
+<h2 mat-dialog-title>Create Project</h2>
+
+<body>
+  <form [formGroup]="empForm" enctype="multipart/form-data">
+    <div class="container-fluid">
+      <section class="container">
+
+        <div class="col-mb-5 form-group">
+
+          <mat-form-field appearance="outline">
+
+            <mat-label>Name</mat-label>
+            <input matInput placeholder="Enter Name" formControlName="project_title" required>
+            <mat-error *ngIf="myError('project_title','required')">Project name is required</mat-error>
+
+          </mat-form-field><br />
+
+
+        </div>
+
+        <div class="col-mb-5 form-group">
+
+          <mat-form-field appearance="outline">
+            <input matInput [placeholder]="project_author_name" formControlName="project_author_Name" [disabled]="true"
+              readonly="true">
+              <mat-error *ngIf="myError('project_author_Name', 'required')">Project Author Name is required</mat-error>
+          </mat-form-field><br />
+       
+        </div>
+
+        Description
+        <div class="editor ">
+          <ngx-editor-menu [editor]="editor" [toolbar]="toolbar">
+          </ngx-editor-menu>
+          <ngx-editor [editor]="editor" id="projectDesc" formControlName="project_description" required>
+                
+          </ngx-editor>
+         
+        </div>       
+        <br>
+        <mat-form-field appearance="outline">
+          <mat-label>Start date</mat-label>
+          <input matInput [matDatepicker]="picker" formControlName="project_start_date" required
+            (dateChange)="onStartDate($event.value)">
+          <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+          <mat-error *ngIf="myError('project_start_date', 'required')">Project Start Date is required</mat-error>
+        </mat-form-field>
+
+
+
+        <mat-form-field appearance="outline" style="margin-left: 100px">
+          <mat-label>End date</mat-label>
+          <input matInput [matDatepicker]="picker1" formControlName="project_end_date" required [min]="minDate">
+          <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
+          <mat-datepicker #picker1></mat-datepicker>
+          <mat-error *ngIf="myError('project_end_date', 'required')">Project End Date is required</mat-error>
+        </mat-form-field>
+
+        <div class="col-sm-5 form-group">
+          <mat-form-field appearance="outline">
+            <input matInput value="On Going" [disabled]="true" readonly="true">
+
+
+          </mat-form-field>
+        </div>
+
+        <div class="col-sm-5 form-group">
+          <mat-form-field appearance="fill">
+            <mat-label>Team Member Name</mat-label>
+            <mat-select formControlName="project_team_members_id" required multiple="true" >
+              <div class="options" *ngFor="let item of user_list">
+              <mat-option  [value]="item._id" *ngIf="item._id!==this.project_author_id ">{{item.user_name}}</mat-option>
+            </div>
+
+            </mat-select>
+            <mat-error *ngIf="myError('project_team_members_id', 'required')">Team Member Name is required</mat-error>
+          </mat-form-field>
+        </div><br />
+<div>
+        
+        <input type="file" class="file-input"
+        [accept]="requiredFileType"
+        (change)="onFileSelected($event.target)" 
+        name="project_attachment">
+        
+      </div>
+      </section>
+
+
+      <br />
+      <div mat-dialog-actions >
+        <footer class="sticky-modal-footer form-group">
+          <button type="button" class="btn " mat-dialog-close>Cancel</button>
+          <button type="button" class="btn btn-primary" [disabled]="!empForm.valid" (click)="addDetail()">Submit</button>
+
+        </footer>
+      </div>
+    </div>
+  </form>
+
+
+</body>

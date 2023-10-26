@@ -1,0 +1,50 @@
+
+body{
+    box-sizing: border-box;
+    
+}
+.btn{
+    margin-right: 2px; 
+   
+    }
+    .input{
+        margin-right: 50px;
+    }
+    h4{
+        text-align: left;
+        padding:10px;
+    }
+    .mat-mdc-dialog-actions {
+      margin-left: 575px;
+      
+    }
+    .sticky-modal-footer {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        border-top: 1px solid #efefef;
+        background-color: white;
+        padding: 10px 24px;
+      }
+      .mat-dialog-actions {
+        justify-content: flex-end;
+    }
+
+        .content {
+          width: 100%;
+      
+        } 
+      .editor {
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        border-radius: 2px;
+      } 
+      ::ng-deep .icon-outside .close-button{
+        float: right;
+        top:-52px;
+        right:-52px;
+      }
+      .close-button{
+        float:right
+      }
+      

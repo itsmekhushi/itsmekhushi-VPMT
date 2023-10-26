@@ -1,0 +1,57 @@
+
+ 
+ <h4 mat-dialog-title>Project : {{project_details.project_title}}</h4>
+ <mat-dialog-content class="mat-typography">
+   
+        <mat-card-title >Description : </mat-card-title>
+        <div class="card">
+        
+    <div class="card-body">
+        <mat-card-content>
+           
+            <div  [innerHTML]="project_details.project_description" ></div>
+                                    
+        </mat-card-content></div></div>
+        <div class="people  ">
+            <div class="row m-2">
+                <mat-card-title >Team : </mat-card-title>
+        <mat-card class="example-card col-8 m-4">
+           <mat-card-title>Author</mat-card-title>
+            <p data-letters="HS">{{project_details.project_author_id.user_name}}</p>
+            
+        </mat-card>
+        <mat-card class="example-card col-8 m-4">
+            <mat-card-title>Team Member</mat-card-title>
+            <div *ngFor=" let item of team_member">
+                
+                    <p data-letters= item.initials > {{item.user_name }}</p>
+               
+
+        </div>
+        </mat-card></div></div>
+        <div class="people  M-2">
+            <div class="row m-2">
+                <mat-card-title >Project Date Details : </mat-card-title>
+        <mat-card class="example-card col-8 m-4">
+           <mat-card-title>Start Date : </mat-card-title>
+           {{project_details.project_start_date | date }}
+            
+        </mat-card>
+        <mat-card class="example-card col-8 m-4">
+            <mat-card-title>End Date : </mat-card-title>
+            
+            {{project_details.project_end_date | date }}
+            
+        </mat-card></div></div>
+        <mat-card-title >Attachment : </mat-card-title>
+        
+        
+            <mat-card-image>
+                <img width="100px" height="100px" id="img-responsive"
+                class="image-slide"  src="{{item}}" alt="No image available" (click)="zoomImage()" >
+
+            </mat-card-image>
+ </mat-dialog-content>
+ <mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Close</button>
+  </mat-dialog-actions>

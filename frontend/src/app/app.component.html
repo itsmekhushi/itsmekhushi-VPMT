@@ -1,0 +1,22 @@
+
+  <ngx-ui-loader
+    fgsColor="#7e59cf"
+    text="Please wait.."
+    pbColor="#7e59cf"
+  ></ngx-ui-loader>
+
+  <app-top-nav (sideNavToggled)="sideNavStatus=$event;" *ngIf="!isLoginPage"></app-top-nav>
+ 
+  <app-side-nav  [sideNavStatus]="sideNavStatus" [ngClass]="{'app-side-nav-open':sideNavStatus}"  *ngIf="!isLoginPage"></app-side-nav>
+   
+ <div class="display-area" [ngClass]="{'display-area-shrink':sideNavStatus}"> 
+   <router-outlet ></router-outlet>
+   
+ </div>
+   <lib-ng-toast></lib-ng-toast>
+  
+    <app-footer *ngIf="!isLoginPage"></app-footer>
+
+
+
+

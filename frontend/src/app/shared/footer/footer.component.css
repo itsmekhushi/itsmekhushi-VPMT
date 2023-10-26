@@ -1,0 +1,25 @@
+/* footer{
+position: fixed;
+bottom:0;
+width:100%;
+margin:auto;
+
+
+} */
+
+
+  .fixed-footer{
+    width: 100%;
+    bottom: 0;
+    position: fixed;        
+    background: #dadada;
+    padding: 10px 0;
+    color: #424242;
+    margin-top: 23px;
+    /* opacity: 0.7; */
+  }
+  .container{
+    margin-left:10px;
+    font-weight: bold;
+    color:rgb(95, 95, 95)
+  }

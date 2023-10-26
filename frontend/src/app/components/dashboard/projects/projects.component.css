@@ -1,0 +1,92 @@
+
+.mat-mdc-table .mdc-data-table__header-row {
+  background-color: #314e79;
+  /* margin-right:-65px; */
+}
+.mat-mdc-table .mat-mdc-header-cell {
+  
+  color: white;
+}
+.mat-sort-header-pointer-left {
+    transform-origin: right;
+    left: 0;
+    color: white;
+}
+table {
+  width: 30%;
+  /* height:275px; */
+  table-layout: fixed;
+}
+
+.mat-mdc-form-field {
+  font-size: 14px;
+  width:20%;
+  margin-left: 31px;
+  margin-bottom:3px;
+  margin-top:20px;
+}
+
+td, th {
+  width: 5%;
+/* height: 46px; */
+}
+
+mat-form-field{
+  padding-top: 40px;
+  width:20%;
+}
+.main{
+ 
+  float: right;
+ 
+  
+}
+.close-icon {
+  transition: 1s ease-in-out;
+}
+
+.close-icon:hover {
+  transform: rotate(180deg);
+}
+
+.material-symbols-outlined {
+  color:white;
+}
+.dropdown-toggle::after{
+  color:white;
+  
+}
+
+.main[_ngcontent-uim-c260]{
+  padding-top:-33px;
+}
+.mat-mdc-table[_ngcontent-tqx-c198] .mat-mdc-header-cell[_ngcontent-tqx-c198] {
+  color: white;
+  /* height: 80px; */
+}
+.mat-elevation-z8{
+
+ margin-right: 5px;
+ margin-left:31px;
+height: 610px;
+overflow: auto;
+
+}
+.button{
+float: right;
+ background-color: #314e79;
+  color: white;  
+    margin-right: 34px;
+    margin-top: 88px;
+}
+.mat-mdc-paginator-container{
+display: flex;
+align-items: center;
+justify-content: flex-end;
+padding: 0 8px;
+flex-wrap: wrap-reverse;
+width: 100%;
+margin-top: 180px;}
+.mat-mdc-text-field-wrapper{
+  margin-left:188px;
+}

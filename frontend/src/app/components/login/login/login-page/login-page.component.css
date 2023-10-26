@@ -1,0 +1,90 @@
+
+#password1 input[type=text] {
+    width: 200px;
+    height: 20px;
+    margin: 8px 0px;
+}
+
+#password1 input[type=text]:hover {
+    border: 2px solid rgb(4, 81, 170);
+}
+
+#password1 input[type=password]:hover {
+    border: 2px solid rgb(4, 81, 170);
+}
+
+#password1 input[type=password] {
+    width: 200px;
+    height: 20px;
+    margin: 8px 0px;
+}
+/* #password1 input[type=text] {
+    width: 200px;
+    height: 20px;
+    margin: 8px 0px;
+} */
+.eye {
+    position: absolute;
+
+}
+
+.eye i {
+    margin: 10px -27px;
+}
+.fa-solid{
+    margin:12px;
+}
+
+
+.image{
+    width: 18%;
+}
+
+@import url("https://fonts.googleapis.com/css?family=Gelasio&display=swap");
+
+* { box-sizing: border-box; }
+
+body,
+html { overflow-x: hidden; }
+
+.bar {
+  position: fixed;
+ 
+  left: 0;
+
+  width: 100%;
+  padding: 10px 0;
+
+  background-color: #704705 ;
+  color: rgb(0, 0, 0);
+
+  /* font-family: Gelasio; */
+  font-size: 18px;
+}
+
+.form-group span{
+  color: red;
+}
+
+label{
+  color:#5c805a 
+}
+button{
+  background-color: lightblue;
+  color: green;
+}
+
+.bar_content {
+  display: block; /* Important to give the content a width */
+
+  width: 100%;
+  transform: translateX(-100%); /* Animation start out of the screen */
+
+  /* Add the animation */
+  animation: move 15s linear infinite /* infinite make reapeat the animation indefinitely */;
+}
+
+/* Create the animation */
+@keyframes move {
+  to { transform: translateX(100%); }
+}

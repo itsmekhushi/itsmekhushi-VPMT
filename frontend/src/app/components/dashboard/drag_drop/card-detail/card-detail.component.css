@@ -1,0 +1,25 @@
+
+ 
+  .mat-mdc-dialog-container .mdc-dialog__surface{
+    overflow: auto;
+}.container{
+    overflow: auto;
+  }
+  .sticky-modal-footer {
+    position: absolute;
+    top:31px;
+    left: 0;
+    width: 100%;
+    border-top: 1px solid #efefef;
+    background-color: white;
+    padding: 10px 24px;
+  }
+ 
+  
+ .image-attachment{
+  display: inline-block;
+}
+.mat-mdc-dialog-actions {
+  margin-left: 575px;
+  
+}

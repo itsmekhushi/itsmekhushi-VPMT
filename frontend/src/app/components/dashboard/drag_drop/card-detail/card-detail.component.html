@@ -1,0 +1,92 @@
+<div class="container p-2 h-100" *ngIf="isLoaded">
+  <div class="row">
+    <div class="col-12">
+      <div class="card" style="padding: 23px;">
+        <div class="header m-2">
+          <div class="header_id text-muted">
+            <!-- {{ticket_details[0] |json }} -->
+            {{this.data.project_details.project_title}} / {{ticket_details.ticket_id}}
+          </div>
+          <div class="header_title h3" style="display: inline-block;">
+            {{ticket_details.ticket_title}}
+          </div>
+          <div class="status h6 " style="float: right;">
+            <button class="btn " [style.background-color]="boxColor"
+              style="color: white;">{{ticket_details.ticket_status}}</button>            
+          </div>
+        </div>
+
+        <div class="body m-2">
+          <div class="description">
+            <h6>Description</h6>
+            <div class="card">
+              <div class="card-body" [innerHTML]="ticket_details.ticket_description">
+              </div>
+            </div>
+          </div>
+
+          <div class="attachment m-2">
+
+            <h6>Attachment</h6>
+            <div class="card image-attachment">
+              <div class="card-body image-attachment" >
+                <div *ngIf="this.imgAvailable==null">No image available</div>
+
+                   <img width="100px" height="100px" id="img-responsive"
+                  class="image-slide"  src="{{item}}" alt="Error while load image" *ngIf="this.imgAvailable!=null" (click)="zoomImage()">
+                <!-- This is some text within a card body. -->
+                <!-- attachments -->
+              </div>
+            </div>
+          </div>
+
+          <div class="people mt-2">
+            <h6>People</h6>
+            <div class="row m-2">
+              <div class="col-6">
+                <h6>Assignee:</h6>
+                {{ticket_details.ticket_assignee_id.user_name}}
+              </div>
+              <div class="col-6">
+                <h6>Reporter:</h6>
+                {{ticket_details.ticket_reporter_id.user_name}}
+              </div>
+            </div>
+          </div>
+
+
+          <div class="date mt-2">
+            <h6>Ticket Date Details</h6>
+            <div class="row m-2">
+              <div class="col-6">
+                <h6>Start Date:</h6>
+                {{ticket_details.ticket_start_date | date}}
+              </div>
+              <div class="col-6">
+                <h6>End Date:</h6>
+                {{ticket_details.ticket_end_date | date}}
+              </div>
+            </div>
+          </div>
+
+         
+
+          <div class="comments">
+            <app-comment [ticket_id]="this.data.ticket_id" [ticket_details]="this.ticket_details" [user_details]="userData"></app-comment>
+          </div>
+
+        </div>
+      </div>
+      <div mat-dialog-actions>
+        <footer class="sticky-modal-footer">
+          <button class="btn button" style="background-color: #314e79; color:white; margin-right: 10px;"
+            (click)="editTicket(ticket_details._id)">Update</button>
+          <button type="submit" class="btn btn-danger" (click)="openDialog(ticket_details._id,ticket_details.ticket_title,ticket_details.ticket_status)">Delete</button>
+        </footer>
+      </div>
+    </div>
+
+  </div>
+
+
+</div>

@@ -1,0 +1,61 @@
+<body>
+  <div class="container">
+    <div class="card-container">
+      <div class="upper-container">
+        <div class="image-container"> 
+          <img src="https://www.w3schools.com/bootstrap4/img_avatar4.png" alt="logo"
+            class="rounded-pill"></div>
+  
+      </div>
+      
+      <div *ngIf="user" class="lower-container">
+        
+          <h4>{{ user.user_name }}</h4><br/>
+          <h5>{{ user.user_email }}</h5><br/>
+         
+          <p><strong>Office: </strong> Volansys Technologies</p><br />
+          <p><strong>Location: </strong>Ahmedabad</p><br />
+        </div>
+        <div *ngIf="!user">
+          <p>User data not available.</p>
+        </div>
+      </div>
+    </div>
+  
+ </body>
+ <!--
+
+<body>
+  <div class="card-container">
+    <div class="upper-container">
+      <div class="image-container"> 
+        <img src="https://www.w3schools.com/bootstrap4/img_avatar4.png" alt="logo"
+          class="rounded-pill"></div>
+
+    </div>
+    <div class="lower-container">
+      <div>
+        <h4> {{profile[0].user_name }}</h4><br />
+        <h5> {{profile[0].user_email}}</h5><br />
+        <h5> {{profile[0].user_designation_id.designation}}</h5><br />
+
+        <p><strong>Location: </strong> Volansys Technologies</p><br />
+        <p><strong>Office: </strong>Ahmedabad</p><br />
+      </div>
+
+    </div>
+  </div>
+ 
+  
+                      <h5 class="card-title"> {{profile[0].user_name }}</h5>
+                      <h6 class="card-subtitle mb-2 text-muted"> {{profile[0].user_designation_id.designation}}</h6>
+                      <p class="card-text"> <b>Full Stack Developer</b></p>
+                      <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><strong>Email:</strong>  {{profile[0].user_email}}</li>
+                        <li class="list-group-item"><strong>Location:</strong> Volansys Technologies </li>
+                        <li class="list-group-item"><strong>Office:</strong> Ahmedabad</li>
+                    
+                
+             
+      
+    </div>-->

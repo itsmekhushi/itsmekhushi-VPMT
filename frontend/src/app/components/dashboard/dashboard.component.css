@@ -1,0 +1,46 @@
+#toDo {
+  border-top: 6px solid #fbd32b;
+}
+
+#inProgress {
+  border-top: 6px solid #f79a0e;
+}
+
+#readyForQA {
+  border-top: 6px solid #8bb1d6;
+}
+
+#done {
+  border-top: 6px solid #3ba1d1;
+}
+.container{
+  margin-top: 8%;
+}
+.container[_ngcontent-rcx-c282] {
+  
+  overflow: auto;
+  min-height: 100%;
+ 
+}
+
+.btn {
+  margin-bottom:4px;
+  margin-right: 48px;
+  float: right;
+  background-color: #314e79;
+  color: white;
+}
+.card{
+  width:11rem; 
+  float: right;
+}
+.chart{
+  margin-bottom:40px;
+}
+/* .main{
+  margin: 35px;
+} */
+.container-main{
+
+  margin-top:8%;
+}

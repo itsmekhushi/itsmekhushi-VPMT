@@ -1,0 +1,119 @@
+/*body{
+    margin:0px;
+    padding:0px;
+    width:300px;
+    height:430px;
+    border-radius: 6px;
+    position: absolute;
+    top:300%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    box-shadow: 0px 1px 10px 1 px #000;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+    
+}
+.card-container{
+ 
+    width:300px;
+    height:430px;
+    border-radius: 6px;
+    position: absolute;
+    top:132%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    box-shadow: 0px 1px 10px 1 px #000;
+    display:inline-block;
+    overflow:hidden;
+
+}
+.upper-container{
+    height:150px;
+    background: #dbe1f1;
+}
+.lower-container{
+    height:280px;background-color: beige;
+    padding:20px;
+    padding-top:40px;
+    text-align:center;
+}
+.lower-container h4,h5,p{
+    box-sizing: border-box;
+    line-height: .6;
+    font-weight: lighter;
+}
+.lower-container h5{
+    opacity: 0.6;
+    font-weight: bold;
+}
+.image-container{
+    background-color: antiquewhite;
+    width:80px;
+    height:80px;
+    border-radius: 50%;
+    padding:5px;
+    transform: translate(100px,100px);
+}
+.image-container img{
+    
+    width:80px;
+    height:80px;
+    border-radius: 50%;
+}
+*/
+.container{
+    width:100%;
+    height:100vh;
+    background-image:url("../../../assets/photo-1582738411706-bfc8e691d1c2.avif") ;
+    background-size: cover;
+   
+    box-shadow: 0px 1px 10px 1 px #000;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.card-container{
+ 
+    width:300px;
+    height:430px;
+    border-radius: 6px;
+    position: absolute;
+    top:47%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    box-shadow: 0px 1px 10px 1 px #000;
+    display:inline-block;
+    overflow:hidden;
+
+}
+.upper-container{
+    height:150px;
+    background: #314e79;
+}
+.lower-container{
+    height:280px;background-color: beige;
+    padding:20px;
+    padding-top:40px;
+    text-align:center;
+}
+.lower-container h4,h5,p{
+    box-sizing: border-box;
+    line-height: .6;
+    font-weight: lighter;
+}
+.lower-container h5{
+    opacity: 0.6;
+    font-weight: bold;
+}
+.image-container{
+    background-color: antiquewhite;
+    width:80px;
+    height:80px;
+    border-radius: 50%;
+    padding:5px;
+    transform: translate(100px,100px);
+}
+.image-container img{
+    
+    width:71px;
+    height:75px;
+    border-radius: 50%;
+}

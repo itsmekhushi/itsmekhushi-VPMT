@@ -1,0 +1,33 @@
+app-top-nav{
+    position:fixed;
+    width:100%;
+    top:0px;
+    height:4rem;
+    z-index:2;
+}
+app-side-nav{
+    top:3rem;
+    left:0rem;
+    width:65px;
+    height:692%;
+    box-shadow:0px 0px 10px #314e79;
+    background-color: #314e79;
+    border-top:16px solid white;
+    overflow-x:hidden;
+    white-space:nowrap;
+    transition:width 500ms ease-in;
+    position: fixed;
+}
+.display-area{
+    position: absolute;
+    left:60px;
+    transition:left 500ms ease-in;
+    right: 50px; 
+}
+.app-side-nav-open{
+    width:230px;
+}
+.display-area-shrink{
+    left:270px;
+    width:80%; 
+}
