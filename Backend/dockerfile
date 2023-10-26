@@ -1,0 +1,6 @@
+FROM node:18-slim
+WORKDIR /server
+COPY package.json  /server
+RUN npm install
+COPY . /server
+CMD [ "sh","-c","npm start -- --port $PORT"]
